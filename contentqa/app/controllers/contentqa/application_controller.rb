@@ -47,9 +47,9 @@ module Contentqa
     def request_options
       if request.env['HTTP_AUTHORIZATION']
         user, pass = ActionController::HttpAuthentication::Basic::user_name_and_password(request)
-        {:basic_auth => {:username => user, :password => pass}}
+        {:basic_auth => {:username => user, :password => pass}, :verify => false}
       else
-        {}
+        {:verify => false}
       end
     end
 

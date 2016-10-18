@@ -12,7 +12,7 @@ gem 'dpla_search_api_v1', :path => 'v1'
 gem 'dpla_contentqa', :path => 'contentqa'
 gem 'delayed_job'
 gem 'delayed_job_active_record'
-gem 'jquery-tablesorter'
+gem 'jquery-tablesorter', '~>1.22.0'
 gem 'daemons'
 gem 'rubyzip', '~> 1.1.6', :require => 'zip'
 

@@ -9,8 +9,14 @@ module Contentqa
       @id = params[:id]
 
       doc = @id ? item_fetch(@id)['docs'].first : get_random_doc(fetch['count'])
-      
-      @original = JSON.pretty_generate(doc['originalRecord'] || {})
+      @original =
+          if doc['originalRecord'].empty?
+            {}
+          elsif doc['originalRecord'].key?('stringValue')
+            doc['originalRecord']['stringValue']
+          else
+            JSON.pretty_generate(doc['originalRecord'])
+          end
       doc.delete_if { |key,_| %w[ score originalRecord @context _rev _id ].include? key}
       @twisted = JSON.pretty_generate(doc)
       @link = item_fetch_link(doc['id'])

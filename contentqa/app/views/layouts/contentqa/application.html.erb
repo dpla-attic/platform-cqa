@@ -49,7 +49,7 @@
             <ul class="nav">
               <li><%= link_to "Compare", "/qa/compare"  %></li>
               <li><%= link_to "Search", "/qa/search"  %></li>
-              <li><%= link_to "Reporting", "/qa/reporting"  %></li>
+              <li><% if V1::Config.hide_reports? %>&nbsp;<% else %><%= link_to "Reporting", "/qa/reporting"  %><% end %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

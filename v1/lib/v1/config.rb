@@ -29,6 +29,10 @@ module V1
       (dpla['api_auth'] && dpla['api_auth']['skip_key_auth_completely'] === true)
     end
 
+    def self.hide_reports?
+      (dpla['hide_reports'] === true)
+    end
+
     def self.initialize_search_engine
       #TODO: Move to top level of this module and remove initializer from engine.rb
       Tire::Configuration.url(search_endpoint)

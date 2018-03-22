@@ -5,7 +5,7 @@ module Contentqa
     include Contentqa::SearchHelper
 
     DISPLAY = %w[id sourceResource.title sourceResource.description sourceResource.creator sourceResource.type sourceResource.publisher sourceResource.format sourceResource.rights sourceResource.contributor sourceResource.date sourceResource.spatial sourceResource.temporal sourceResource.subject sourceResource.ingestDate sourceResource.collection sourceResource.language.name rights dataProvider]
-    SEARCH = %w[id sourceResource.title sourceResource.description sourceResource.creator sourceResource.type sourceResource.publisher sourceResource.format sourceResource.rights sourceResource.contributor sourceResource.spatial sourceResource.date.after sourceResource.date.before sourceResource.subject.name sourceResource.collection]
+    SEARCH = %w[id sourceResource.title sourceResource.description sourceResource.creator sourceResource.type sourceResource.publisher sourceResource.format sourceResource.rights sourceResource.contributor sourceResource.spatial sourceResource.date.after sourceResource.date.before sourceResource.subject.name sourceResource.collection rights dataProvider]
     FACETS = %w[sourceResource.type sourceResource.format sourceResource.language.name sourceResource.spatial.name sourceResource.spatial.state sourceResource.spatial.city sourceResource.subject.name sourceResource.collection.title sourceResource.contributor]
 
     # add facets to PARAMETERS because anything facetable should also be searchable. Dupes are harmless here

@@ -214,7 +214,7 @@ module V1
             'type' => 'multi_field',
             'fields' => {
               'dataProvider' => { 'type' => 'string', 'sort' => 'multi_field' },
-              'not_analyzed' => { 'type' => 'string', 'index' => 'not_analyzed', 'sort' => 'script', 'facet' => true }
+              'not_analyzed' => { 'type' => 'string', 'index' => 'not_analyzed' }
             }
           },
           'hasView' => {
@@ -235,7 +235,7 @@ module V1
             'type' => 'multi_field',
             'fields' => {
               'intermediateProvider' => { 'type' => 'string', 'sort' => 'multi_field' },
-              'not_analyzed' => { 'type' => 'string', 'index' => 'not_analyzed', 'sort' => 'script', 'facet' => true }
+              'not_analyzed' => { 'type' => 'string', 'index' => 'not_analyzed' }
             }
           },
           'isPartOf' => {
@@ -264,7 +264,7 @@ module V1
               }                      
             }
           },
-          'rights' => { 'type' => 'string' },
+          'rights' => { 'type' => 'string', 'index' => 'not_analyzed'},
           '@context' => { 'type' => 'object', 'enabled' => false },
           'originalRecord' => { 'type' => 'object', 'enabled' => false },
           'ingestType' => { 'enabled' => false },

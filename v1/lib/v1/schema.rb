@@ -264,7 +264,7 @@ module V1
               }                      
             }
           },
-          'rights' => { 'type' => 'string' },
+          'rights' => { 'type' => 'string', 'index' => 'not_analyzed', 'sort' => 'script', 'facet' => true},
           '@context' => { 'type' => 'object', 'enabled' => false },
           'originalRecord' => { 'type' => 'object', 'enabled' => false },
           'ingestType' => { 'enabled' => false },
